@@ -59,7 +59,7 @@
 -Usuario 1 ── N LogAuditoria
 
 
-## 📝 Diagrama Chen (Mermaid)
+## Diagrama Chen (Mermaid)
 
 ```mermaid
 erDiagram
