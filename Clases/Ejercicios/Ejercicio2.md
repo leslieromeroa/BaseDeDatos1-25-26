@@ -23,22 +23,22 @@
 
 | **Entidad** | **Atributos** |
 |------------|----------------|
-| **Usuario** | id_usuario, nombre, email, telefono, tipo (cliente/vendedor/ambos) |
-| **Producto** | id_producto, nombre, descripcion, id_categoria, id_vendedor, activo |
-| **VarianteProducto** | id_variante, id_producto, atributos (talla, color, etc.), sku |
-| **Categoria** | id_categoria, nombre, id_padre (para jerarquía) |
-| **Almacen** | id_almacen, id_vendedor, nombre, direccion, tipo (propio/proveedor) |
-| **Inventario** | id_variante, id_almacen, cantidad_disponible |
-| **Pedido** | id_pedido, id_cliente, fecha_creacion, estado, total |
-| **LineaPedido** | id_linea, id_pedido, id_variante, cantidad, precio_unitario |
-| **Envio** | id_envio, id_pedido, estado, fecha_envio, fecha_entrega |
-| **Pago** | id_pago, id_pedido, monto, estado, fecha, id_metodo_pago |
+| **Usuario** | id_usuario, nombre, email, telefono, rol (cliente/vendedor/ambos) |
+| **Producto** | id_producto, nombre, descripcion, categoria_id, vendedor_id, estado (activo/inactivo) |
+| **VarianteProducto** | id_variante, producto_id, atributos (talla, color, etc.), sku |
+| **Categoria** | id_categoria, nombre, categoria_padre_id |
+| **Almacen** | id_almacen, vendedor_id, nombre, direccion, tipo (propio/proveedor) |
+| **Inventario** | variante_id, almacen_id, cantidad_disponible |
+| **Pedido** | id_pedido, cliente_id, fecha_creacion, estado, total |
+| **LineaPedido** | id_linea, pedido_id, variante_id, cantidad, precio_unitario |
+| **Envio** | id_envio, linea_id, estado, fecha_envio, fecha_entrega |
+| **Pago** | id_pago, pedido_id, monto, estado, fecha, metodo_pago_id |
 | **MetodoPago** | id_metodo_pago, tipo, descripcion |
-| **Devolucion** | id_devolucion, id_linea, motivo, estado, monto_reembolsado, nota_credito |
-| **Promocion** | id_promocion, codigo, descripcion, descuento, tipo_aplicacion (producto/categoria/pedido), fecha_inicio, fecha_fin, condiciones |
-| **ResenaProducto** | id_resena, id_variante, id_cliente, calificacion, comentario, fecha |
-| **HistorialPrecio** | id_historial, id_variante, precio, fecha_inicio, fecha_fin |
-| **LogAuditoria** | id_log, id_usuario, entidad_afectada, accion, fecha, detalle |
+| **Devolucion** | id_devolucion, linea_id, motivo, estado, monto_reembolsado, nota_credito |
+| **Promocion** | id_promocion, codigo, descripcion, descuento, aplicacion_tipo (producto/categoria/pedido), fecha_inicio, fecha_fin, condiciones |
+| **ResenaProducto** | id_resena, variante_id, cliente_id, calificacion, comentario, fecha |
+| **HistorialPrecio** | id_historial, variante_id, precio, fecha_inicio, fecha_fin |
+| **LogAuditoria** | id_log, usuario_id, entidad_afectada, accion, fecha, detalles |
 
 ---
 
